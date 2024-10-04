@@ -32,7 +32,7 @@ const Footer = () => {
           <Link href="/#" className='text-light2 text-sm underline hover:no-underline transition'>Community</Link>
         </div>
       </div>
-      <div className="copyright bg-dark2 text-light2 text-xs py-2 flex justify-center z-10">© 2024 Elderbug's Archive LLC</div>
+      <div className="copyright bg-dark2 text-light2 text-xs py-2 flex justify-center z-10">© 2024 Elderbug&apos;s Archive LLC</div>
     </div>
   );
 };

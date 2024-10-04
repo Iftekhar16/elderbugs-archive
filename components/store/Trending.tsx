@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carouselCustom"
 import TitleLink from './TitleLink';
 
-const Trending3 = () => {
+const Trending = () => {
   return (
     <div className='max-w-[70rem] mx-auto mb-20'>
       <CarouselCustom
@@ -63,4 +63,4 @@ const Trending3 = () => {
   );
 };
 
-export default Trending3;
+export default Trending;

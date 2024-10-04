@@ -7,7 +7,7 @@ const Nav = () => {
     {/* <div className='w-full bg-light1 text-dark1 py-3 sticky top-0 z-[5000]'> */}
       <div className="wrapper max-w-[70rem] mx-auto flex items-center gap-3">
         <div className="left w-full">
-          <Link className="text-xl font-semibold" href="/store">Elderbug's Archive</Link>
+          <Link className="text-xl font-semibold" href="/store">Elderbug&apos;s Archive</Link>
         </div>
         <div className="links flex justify-center gap-3">
           <Link className='hover:underline transition' href="/store">Store</Link>

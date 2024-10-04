@@ -12,7 +12,7 @@ import Autoplay from 'embla-carousel-autoplay';
 import FeaturedItem from './FeaturedItem';
 
 
-const Featured2 = () => {
+const Featured = () => {
   return (
     <div className='mt-10 mb-20 select-none'>
       <Carousel
@@ -44,4 +44,4 @@ const Featured2 = () => {
   );
 };
 
-export default Featured2;
+export default Featured;
