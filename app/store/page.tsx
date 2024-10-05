@@ -11,7 +11,11 @@ import fetchGames from '@/utils/fetchGames';
 
 const Page = () => {
 
-  // const { data: games, isLoading, error } = useQuery("games", fetchGames);
+  const { data: games, isLoading, error } = useQuery({
+    queryKey: ['games'],
+    queryFn: fetchGames
+  });
+  console.log(games);
 
   return (
     <div>
