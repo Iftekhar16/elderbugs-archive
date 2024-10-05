@@ -1,22 +1,12 @@
 import type { Metadata } from "next";
-// import localFont from "next/font/local";
 import { Montserrat } from "@next/font/google"
 import "./globals.css";
+import ReactQueryProvider from "@/utils/providers/QueryClientProvider";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat'
 })
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
 
 export const metadata: Metadata = {
   title: "Elderbug's Archive",
@@ -30,9 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.className} antialiased`} > */}
       <body className={`bg-light2 ${montserrat.className} antialiased`} >
-        {children}
+        <ReactQueryProvider>
+          {children}
+        </ReactQueryProvider>
       </body>
     </html>
   );

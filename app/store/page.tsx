@@ -6,8 +6,13 @@ import SaleWishlistedRecent from '@/components/store/SaleWishlistedRecent';
 import Footer from '@/components/store/Footer';
 import FeaturedFranchises from '@/components/store/FeaturedFranchises';
 import Nav from '@/components/store/Nav';
+import { useQuery } from '@tanstack/react-query';
+import fetchGames from '@/utils/fetchGames';
 
 const Page = () => {
+
+  // const { data: games, isLoading, error } = useQuery("games", fetchGames);
+
   return (
     <div>
       <Nav/>
