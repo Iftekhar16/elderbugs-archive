@@ -11,7 +11,6 @@ const Page = () => {
   return (
     <div>
       <Nav/>
-      {/* <div className="text-center text-5xl font-semibold my-10">Welcome to Elderbug&apos;s Archive!</div> */}
       <Featured/>
       <Trending/>
       <FeaturedFranchises/>
