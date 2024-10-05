@@ -94,9 +94,9 @@ const Game = () => {
             <div className="py-2 flex justify-between items-center gap-1 mb-3">
               <div className="font-medium">Platforms</div>
               <div className="flex items-center gap-1">
-                <Icon className='text-xl' icon="mingcute:apple-fill" />
-                <Icon className='text-xl' icon="mingcute:linux-fill" />
                 <Icon className='text-xl' icon="mingcute:windows-fill" />
+                <Icon className='text-xl' icon="mingcute:linux-fill" />
+                <Icon className='text-xl' icon="mingcute:apple-fill" />
               </div>
             </div>
             <div className="genres mb-7">
