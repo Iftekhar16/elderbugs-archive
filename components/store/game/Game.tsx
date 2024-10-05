@@ -36,7 +36,7 @@ const Game = () => {
               <div className="mb-3">Frostpunk 2 elevates the city-survival genre to a new level. Take the role of a Steward and lead your city through a cascade of calamities taking place in a postapocalyptic, snowy setting. Build large city districts with their string of endless needs and demands. Navigate through conflicting interests of factions that populate your metropolis. As the needs of the city grow and factional power at its core rises, only you can steer the society towards an uncertain future.</div>
 
               <div className="font-semibold">The city grows</div>
-              <div className="mb-3">The world is overtaken by an ever present winter, which makes expansion of the city the only way for the survival of mankind. In order to grow, the metropolis needs resources like coal and oil, just like its citizens require food and warmth. In Frostpunk 2, it's your job to tackle this never ending circle of supply and demand.</div>
+              <div className="mb-3">The world is overtaken by an ever present winter, which makes expansion of the city the only way for the survival of mankind. In order to grow, the metropolis needs resources like coal and oil, just like its citizens require food and warmth. In Frostpunk 2, it&apos;s your job to tackle this never ending circle of supply and demand.</div>
 
               <div className="font-semibold">City districts</div>
               <div className="mb-3">Your city is divided into zones serving different purposes, such as housing or extraction. It&apos;s up to you to build new ones and make sure that those already existing work in perfect unison.</div>
@@ -57,7 +57,7 @@ const Game = () => {
               <div className="mb-3">Support of every faction inside the Council Hall costs dearly, as one&apos;s faction ascension breeds discontent among others. That means you have to carefully think through every alliance.</div>
 
               <div className="font-semibold">Towards progress</div>
-              <div className="mb-3">The Research Institute is where you forge the city's future. Each new project must be entrusted to a faction, forcing you to maneuver and form strategic alliances.</div>
+              <div className="mb-3">The Research Institute is where you forge the city&apos;s future. Each new project must be entrusted to a faction, forcing you to maneuver and form strategic alliances.</div>
 
               <div className="font-semibold">Factions</div>
               <div className="mb-3">People of your city want to have a voice in how you run things. Each faction has its own ideology and ideas for the future, yet they also have one thing in common - insatiable thirst for power. Choose your allies in the Council Hall wisely.</div>

@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from 'embla-carousel-autoplay';
 import ReviewItem from './ReviewItem';
-import { Icon } from '@iconify/react';
 
 const Reviews = () => {
   return (
