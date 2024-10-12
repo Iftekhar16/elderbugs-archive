@@ -1,18 +1,35 @@
 export interface Game {
   id: string
   name: string
-  description?: string
+  descriptions?: description[]
   price?: number
   discount?: number
   discountedPrice?: number
   tags: string[]
-  wishlist: boolean
+  isWishlisted?: boolean
+  isAddedToCart?: boolean
+  wishlistCount?: number
+  isFeatured?: boolean
+  isTrending?: boolean
+  isFeaturedFranchise?: boolean
   developer: string
   publisher?: string
   releaseDate?: string
   rating?: number
   platform: string[]
+  reviews: review[]
   images: images
+}
+
+export interface description {
+  title: string
+  content: string
+}
+
+export interface review {
+  reviewerName? : string
+  reviewDescription? : string
+  reviewRating? : string
 }
 
 export interface images {
@@ -20,10 +37,10 @@ export interface images {
   bannerLandscape?: string
   bannerPortrait?: string
   bannerSquare?: string
-  screenshot?: screenshot
+  screenshots?: screenshots
 }
 
-export interface screenshot {
+export interface screenshots {
   screenshot1?: string
   screenshot2?: string
   screenshot3?: string
@@ -34,32 +51,3 @@ export interface screenshot {
 export interface GetGamesResponse {
   games: Game[];
 }
-
-// games {
-//   id
-//   name
-//   description
-//   price
-//   discount
-//   discountedPrice
-//   tags
-//   wishlist
-//   developer
-//   publisher
-//   releaseDate
-//   rating
-//   platform
-//   images {
-//     logo
-//     bannerLandscape
-//     bannerPortrait
-//     bannerSquare
-//     screenshot {
-//       screenshot1
-//       screenshot2
-//       screenshot3
-//       screenshot4
-//       screenshot5
-//     }
-//   }
-// }

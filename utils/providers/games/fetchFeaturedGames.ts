@@ -1,13 +1,14 @@
-import { Game, GetGamesResponse } from '@/types/games';
-import { gql } from 'graphql-request';
-import { graphQLClient } from '../GraphqlClientProvider';
+import { Game, GetGamesResponse } from "@/types/games";
+import { gql } from "graphql-request";
+import { graphQLClient } from "../GraphqlClientProvider";
 
 const getFeaturedGames = gql`
-  query QueryFeaturedGames {
+  query QueryTrendingGames {
     games {
       id
       name
-      wishlist
+      isFeatured
+      isWishlisted
       images {
         logo
         bannerLandscape
@@ -16,13 +17,13 @@ const getFeaturedGames = gql`
   }
 `;
 
-
 const fetchFeaturedGames = async (): Promise<Game[]> => {
   try {
-    const data: GetGamesResponse = await graphQLClient.request(getFeaturedGames);
+    const data: GetGamesResponse = await graphQLClient.request( getFeaturedGames );
+    console.log("Featured games: ", data.games)
     return data.games;
   } catch {
-    throw new Error("Failed to fetch games");
+    throw new Error("Failed to fetch featured games");
   }
 };
 

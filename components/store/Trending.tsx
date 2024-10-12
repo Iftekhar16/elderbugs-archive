@@ -10,8 +10,28 @@ import {
   CarouselPreviousCustom,
 } from "@/components/ui/carouselCustom"
 import TitleLink from './TitleLink';
+import { useQuery } from '@tanstack/react-query';
+import fetchTrendingGames from '@/utils/providers/games/fetchTrendingGames';
+import { Game } from '@/types/games';
 
 const Trending = () => {
+
+  const { data: games, error, isLoading } = useQuery<Game[]>({
+    queryKey: ['trending'],
+    queryFn: fetchTrendingGames,
+    retry: 3
+  });
+  
+  if(isLoading){
+    return(
+      <div className="text-center">loading...</div>
+    )
+  }
+
+  if(error){
+    console.log("from trending", error);
+  }
+
   return (
     <div className='max-w-[70rem] mx-auto mb-20'>
       <CarouselCustom
@@ -30,33 +50,16 @@ const Trending = () => {
           </div>
         </div>
         <CarouselContentCustom>
-          <CarouselItemCustom className='basis-1/5'>
-            <TrendingCard/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/5'>
-            <TrendingCard/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/5'>
-            <TrendingCard/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/5'>
-            <TrendingCard/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/5'>
-            <TrendingCard/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/5'>
-            <TrendingCard/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/5'>
-            <TrendingCard/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/5'>
-            <TrendingCard/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/5'>
-            <TrendingCard/>
-          </CarouselItemCustom>
+          {
+            games?.map((game)=>(
+              game.isTrending && (
+                <CarouselItemCustom key={game.id} className='basis-1/5'>
+                  {/* <TrendingCard name={game.name} price={game.price} discount={game.discount} discountedPrice={game.discountedPrice} bannerPortrait={game.images.bannerPortrait}/> */}
+                  <TrendingCard id={game.id} name={game.name} price={game.price} discount={game.discount} discountedPrice={game.discountedPrice} images={game.images}/>
+                </CarouselItemCustom>
+              )
+            ))
+          }
         </CarouselContentCustom>
       </CarouselCustom>
     </div>

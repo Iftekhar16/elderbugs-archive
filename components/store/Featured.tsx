@@ -11,12 +11,13 @@ import Autoplay from 'embla-carousel-autoplay';
 import FeaturedItem from './FeaturedItem';
 import { useQuery } from '@tanstack/react-query';
 import fetchFeaturedGames from '@/utils/providers/games/fetchFeaturedGames';
+import { Game } from '@/types/games';
 
 
 const Featured = () => {
 
-  const { data: games, error, isLoading } = useQuery({
-    queryKey: ['games'],
+  const { data: games, error, isLoading } = useQuery<Game[]>({
+    queryKey: ['featured'],
     queryFn: fetchFeaturedGames,
     retry: 3
   });
@@ -28,7 +29,7 @@ const Featured = () => {
   }
 
   if(error){
-    console.log(error);
+    console.log("from featured", error);
   }
 
   return (
@@ -43,25 +44,16 @@ const Featured = () => {
       >
         <CarouselContent className=''>
           {
-            games && games.map((game)=>(
-              <CarouselItem key={game.id} className='relative h-[80svh]'>
-                <FeaturedItem image={game.images.bannerLandscape} logo={game.images.logo}/>
-              </CarouselItem>
+            games?.map((game)=>(
+              game.isFeatured && (
+                <CarouselItem key={game.id} className='relative h-[80svh]'>
+                  <FeaturedItem
+                    images={game.images}
+                  />
+                </CarouselItem>
+              )
             ))
           }
-
-          {/* <CarouselItem className='relative h-[80svh]'>
-            <FeaturedItem image="/frostpunk-banner3.jpg" logo="/frostpunk2-logo1.png"/>
-          </CarouselItem>
-          <CarouselItem className='relative h-[80svh]'>
-            <FeaturedItem image="/frostpunk-banner4.jpg" logo="/frostpunk2-logo1.png"/>
-          </CarouselItem>
-          <CarouselItem className='relative h-[80svh]'>
-            <FeaturedItem image="/frostpunk-banner5.jpg" logo="/frostpunk2-logo1.png"/>
-          </CarouselItem>
-          <CarouselItem className='relative h-[80svh]'>
-            <FeaturedItem image="/frostpunk-banner6.jpg" logo="/frostpunk2-logo1.png"/>
-          </CarouselItem> */}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
