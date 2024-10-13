@@ -54,8 +54,7 @@ const Trending = () => {
             games?.map((game)=>(
               game.isTrending && (
                 <CarouselItemCustom key={game.id} className='basis-1/5'>
-                  {/* <TrendingCard name={game.name} price={game.price} discount={game.discount} discountedPrice={game.discountedPrice} bannerPortrait={game.images.bannerPortrait}/> */}
-                  <TrendingCard id={game.id} name={game.name} price={game.price} discount={game.discount} discountedPrice={game.discountedPrice} images={game.images}/>
+                  <TrendingCard name={game.name} price={game.price} discount={game.discount} discountedPrice={game.discountedPrice} bannerPortrait={game.images.bannerPortrait}/>
                 </CarouselItemCustom>
               )
             ))

@@ -10,6 +10,7 @@ import Nav from '@/components/store/Nav';
 const Page = () => {
   return (
     <div>
+      {/* https://avatar.iran.liara.run/public */}
       <Nav/>
       <Featured/>
       <Trending/>

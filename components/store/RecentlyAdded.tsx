@@ -30,12 +30,11 @@ const RecentlyAdded = () => {
     return new Date(year, month - 1, day);
   };
 
-  const sortedGames = games
-    ?.sort((a, b) => {
-      const dateA = convertToDate(a.releaseDate);
-      const dateB = convertToDate(b.releaseDate);
-      return dateB.getTime() - dateA.getTime();
-    })
+  const sortedGames = games?.sort((a, b) => {
+    const dateA = convertToDate(a.releaseDate??"");
+    const dateB = convertToDate(b.releaseDate??"");
+    return dateB.getTime() - dateA.getTime();
+  })
 
   return (
     <div className="recent-container">
@@ -44,7 +43,7 @@ const RecentlyAdded = () => {
         game.releaseDate !== null && (
           <SaleWishlistedRecentCard
             key={game.id}
-            images={game.images}
+            bannerPortrait={game.images.bannerPortrait}
             name={game.name}
             discount={game.discount}
             price={game.price}

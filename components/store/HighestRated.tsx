@@ -50,35 +50,13 @@ const HighestRated = () => {
           </div>
         </div>
         <CarouselContentCustom>
-          {games?
-            .sort((a,b) => b.rating - a.rating)
+          {games?.sort((a,b) => (b.rating??0) - (a.rating??0))
             .slice(0,6)
             .map((game) => (
-            <CarouselItemCustom key={game.id} className='basis-1/3'>
-              <HighestRatedItem images={game.images} name={game.name} price={game.price} discountedPrice={game.discountedPrice}/>
-            </CarouselItemCustom>
+              <CarouselItemCustom key={game.id} className='basis-1/3'>
+                <HighestRatedItem bannerSquare={game.images.bannerSquare} name={game.name} price={game.price}/>
+              </CarouselItemCustom>
           ))}
-          {/* <CarouselItemCustom className='basis-1/3'>
-            <HighestRatedItem image="/frostpunk-banner4.jpg" title="Frostpunk 2" price={19.99} discountedPrice={4.99}/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/3'>
-            <HighestRatedItem image="/frostpunk-banner5.jpg" title="Frostpunk 2" price={19.99} discountedPrice={4.99}/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/3'>
-            <HighestRatedItem image="/frostpunk-banner6.jpg" title="Frostpunk 2" price={19.99} discountedPrice={4.99}/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/3'>
-            <HighestRatedItem image="/frostpunk-banner3.jpg" title="Frostpunk 2" price={19.99} discountedPrice={4.99}/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/3'>
-            <HighestRatedItem image="/frostpunk-banner4.jpg" title="Frostpunk 2" price={19.99} discountedPrice={4.99}/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/3'>
-            <HighestRatedItem image="/frostpunk-banner5.jpg" title="Frostpunk 2" price={19.99} discountedPrice={4.99}/>
-          </CarouselItemCustom>
-          <CarouselItemCustom className='basis-1/3'>
-            <HighestRatedItem image="/frostpunk-banner6.jpg" title="Frostpunk 2" price={19.99} discountedPrice={4.99}/>
-          </CarouselItemCustom> */}
         </CarouselContentCustom>
       </CarouselCustom>
     </div>

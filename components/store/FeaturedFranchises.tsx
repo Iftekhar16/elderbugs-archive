@@ -30,15 +30,13 @@ const FeaturedFranchises = () => {
       <div className="featured-franchises-container grid grid-cols-3 rounded-lg overflow-hidden">
         {
           games?.filter(game => game.isFeaturedFranchise).slice(0,3).map((game) => (
-            game.isFeaturedFranchise && (
-              <FeaturedFranchisesItem
-                key={game.id}
-                id={game.id}
-                name={game.name}
-                descriptions={game.descriptions}
-                images={game.images}
-              />
-            )
+            <FeaturedFranchisesItem
+              key={game.id}
+              name={game.name}
+              descriptions={game.descriptions}
+              bannerPortrait={game.images.bannerPortrait}
+              logo={game.images.logo}
+            />
           ))
         }
       </div>

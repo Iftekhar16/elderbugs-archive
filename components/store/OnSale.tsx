@@ -29,12 +29,12 @@ const OnSale = () => {
       <TitleLink title="On Sale" link="#" icon="hugeicons:arrow-right-01"/>
       {
         games?.filter((game) => game.discount !== 0 && game.discount !== null)
-          .sort((a, b) => b.discount - a.discount)
+          .sort((a, b) => (b.discount??0) - (a.discount??0))
           .slice(0, 4)
           .map((game) => (
             <SaleWishlistedRecentCard
               key={game.id}
-              images={game.images}
+              bannerPortrait={game.images.bannerPortrait}
               name={game.name}
               discount={game.discount}
               price={game.price}

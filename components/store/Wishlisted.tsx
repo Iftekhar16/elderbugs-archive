@@ -28,12 +28,12 @@ const Wishlisted = () => {
     <div className="wishlisted-container">
       <TitleLink title="Top Wishlisted" link="#" icon="hugeicons:arrow-right-01"/>
       {
-        games?.sort((a, b) => b.wishlistCount - a.wishlistCount)
+        games?.sort((a, b) => (b.wishlistCount??0) - (a.wishlistCount??0))
           .slice(0, 4)
           .map((game) => (
             <SaleWishlistedRecentCard
               key={game.id}
-              images={game.images}
+              bannerPortrait={game.images.bannerPortrait}
               name={game.name}
               discount={game.discount}
               price={game.price}

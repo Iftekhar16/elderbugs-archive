@@ -1,15 +1,25 @@
-import { Game } from '@/types/games';
 import Image from 'next/image';
 import React from 'react';
+import FallBackImage from './FallBackImage';
 
-const TrendingCard = ({ id, name, discountedPrice, price, discount, images }: Game) => {
+interface ITrendingCardProps {
+  name: string
+  discountedPrice: number | undefined
+  price: number | undefined
+  discount: number | undefined
+  bannerPortrait: string | undefined
+}
+
+const TrendingCard = ({ name, discountedPrice, price, discount, bannerPortrait }: ITrendingCardProps) => {
   return (
     <button className="relative select-none">
       {discount!==0 && (
         <p className="discount absolute top-1 right-1 bg-accent2 text-light1 rounded-full text-xs px-2 py-1">-{discount}%</p>
       )}
-      {images.bannerPortrait && (
-        <Image className='aspect-[3/4] object-cover mb-2 rounded-lg' src={images.bannerPortrait} alt="" width={500} height={500}></Image>
+      {bannerPortrait? (
+        <Image className='aspect-[3/4] object-cover mb-2 rounded-lg' src={bannerPortrait} alt="" width={500} height={500}></Image>
+      ):(
+        <FallBackImage classes='aspect-[3/4] object-cover mb-2 rounded-lg' width={500} height={500} text="Trending"/>
       )}
       <p className="title text-left font-semibold text-lg line-clamp-2">{name}</p>
       <div className="flex items-center gap-2">

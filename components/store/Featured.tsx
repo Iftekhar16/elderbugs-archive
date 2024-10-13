@@ -48,7 +48,9 @@ const Featured = () => {
               game.isFeatured && (
                 <CarouselItem key={game.id} className='relative h-[80svh]'>
                   <FeaturedItem
-                    images={game.images}
+                    isWishlisted={game.isWishlisted}
+                    logo={game.images.logo}
+                    bannerLandscape={game.images.bannerLandscape}
                   />
                 </CarouselItem>
               )
