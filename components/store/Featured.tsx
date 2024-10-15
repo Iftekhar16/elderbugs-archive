@@ -44,10 +44,11 @@ const Featured = () => {
       >
         <CarouselContent className=''>
           {
-            games?.map((game)=>(
+            games?.map((game: Game, index: number)=>(
               game.isFeatured && (
-                <CarouselItem key={game.id} className='relative h-[80svh]'>
+                <CarouselItem key={index} className='relative h-[80svh]'>
                   <FeaturedItem
+                    id={game.id}
                     isWishlisted={game.isWishlisted}
                     logo={game.images.logo}
                     bannerLandscape={game.images.bannerLandscape}

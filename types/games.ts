@@ -15,7 +15,7 @@ export interface Game {
   developer: string
   publisher?: string
   releaseDate?: string
-  rating?: number
+  rating?: number | null
   platform: string[]
   reviews: review[]
   images: images
@@ -49,5 +49,6 @@ export interface screenshots {
 }
 
 export interface GetGamesResponse {
-  games: Game[];
+  games: Game[]
+  game: Game
 }

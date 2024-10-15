@@ -54,7 +54,7 @@ const HighestRated = () => {
             .slice(0,6)
             .map((game) => (
               <CarouselItemCustom key={game.id} className='basis-1/3'>
-                <HighestRatedItem bannerSquare={game.images.bannerSquare} name={game.name} price={game.price}/>
+                <HighestRatedItem id={game.id} bannerSquare={game.images.bannerSquare} name={game.name} price={game.price}/>
               </CarouselItemCustom>
           ))}
         </CarouselContentCustom>

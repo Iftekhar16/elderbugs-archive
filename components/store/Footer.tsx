@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <div className='footer-container bg-accent1'>
       <div className="wrapper max-w-[70rem] mx-auto py-14">
-        {/* <div className="title text-3xl font-semibold text-light1 text-center mb-3">Elderbug's Archive</div> */}
         <div className="socials-container flex justify-center items-center gap-3 mb-5">
           <Link href="#" className='bg-light1 text-dark1 size-10 flex justify-center items-center rounded-full'>
             <Icon icon="hugeicons:mail-02" className='text-xl'/>

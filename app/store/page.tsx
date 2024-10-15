@@ -9,14 +9,16 @@ import Nav from '@/components/store/Nav';
 
 const Page = () => {
   return (
-    <div>
+    <div className='flex flex-col justify-between min-h-screen'>
       {/* https://avatar.iran.liara.run/public */}
       <Nav/>
-      <Featured/>
-      <Trending/>
-      <FeaturedFranchises/>
-      <SaleWishlistedRecent/>
-      <HighestRated/>
+      <div className="">
+        <Featured/>
+        <Trending/>
+        <FeaturedFranchises/>
+        <SaleWishlistedRecent/>
+        <HighestRated/>
+      </div>
       <Footer/>
     </div>
   );

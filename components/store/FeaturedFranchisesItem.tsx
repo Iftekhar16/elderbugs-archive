@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import FallBackImage from './FallBackImage';
 
@@ -15,7 +14,7 @@ interface IFeaturedFranchiseItemProps {
 
 const FeaturedFranchisesItem = ({ bannerPortrait, logo, name, descriptions }: IFeaturedFranchiseItemProps) => {
   return (
-    <Link href="#" className="item relative group">
+    <div className="item relative group">
       {bannerPortrait?(
         <Image className="h-[30rem] object-cover brightness-75 group-hover:brightness-100 transition" src={bannerPortrait} alt='' width={1000} height={1000}/>
       ):(
@@ -35,7 +34,7 @@ const FeaturedFranchisesItem = ({ bannerPortrait, logo, name, descriptions }: IF
           <div className="title font-xs text-light1 line-clamp-3">no description available</div>
         )}
       </div>
-    </Link>
+    </div>
   );
 };
 

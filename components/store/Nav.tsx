@@ -4,7 +4,6 @@ import React from 'react';
 const Nav = () => {
   return (
     <div className='w-full bg-accent2 text-light1 py-3 sticky top-0 z-[5000]'>
-    {/* <div className='w-full bg-light1 text-dark1 py-3 sticky top-0 z-[5000]'> */}
       <div className="wrapper max-w-[70rem] mx-auto flex items-center gap-3">
         <div className="left w-full">
           <Link className="text-xl font-semibold" href="/store">Elderbug&apos;s Archive</Link>
@@ -18,7 +17,7 @@ const Nav = () => {
         </div>
         <div className="right w-full flex justify-end gap-3">
           <Link className='px-3 py-1 rounded-lg' href="#">Sign up</Link>
-          <Link className='bg-light1 hover:bg-light2 text-dark1 font-medium px-3 py-1 rounded-lg transition' href="#">Login</Link>
+          <Link className='bg-light1 hover:bg-light2 text-dark1 font-medium px-3 py-1 rounded-lg transition' href="#">Log in</Link>
         </div>
       </div>
     </div>

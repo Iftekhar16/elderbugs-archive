@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
 import FallBackImage from './FallBackImage';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 interface ISaleWishlistedRecentCardProps{
+  id: string
   bannerPortrait: string | undefined | null
   name: string
   discount: number | undefined
@@ -10,9 +13,10 @@ interface ISaleWishlistedRecentCardProps{
   discountedPrice: number | undefined
 }
 
-const SaleWishlistedRecentCard = ({ bannerPortrait, name, discount, price, discountedPrice }: ISaleWishlistedRecentCardProps) => {
+const SaleWishlistedRecentCard = ({ id, bannerPortrait, name, discount, price, discountedPrice }: ISaleWishlistedRecentCardProps) => {
+  const path = usePathname();
   return (
-    <button className="card w-full text-left flex items-center gap-5 p-2 hover:bg-light1 transition rounded-lg">
+    <Link href={`${path}/game/${id}`} className="card w-full text-left flex items-center gap-5 p-2 hover:bg-light1 transition rounded-lg">
       {bannerPortrait?(
         <Image className='w-20 aspect-[3/4] rounded-lg object-cover' src={bannerPortrait} alt="" width={200} height={200}/>
       ):(
@@ -34,7 +38,7 @@ const SaleWishlistedRecentCard = ({ bannerPortrait, name, discount, price, disco
           )}
         </div>
       </div>
-    </button>
+    </Link>
   );
 };
 

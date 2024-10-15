@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
 import FallBackImage from './FallBackImage';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface ITrendingCardProps {
+  id: string
   name: string
   discountedPrice: number | undefined
   price: number | undefined
@@ -10,9 +13,10 @@ interface ITrendingCardProps {
   bannerPortrait: string | undefined
 }
 
-const TrendingCard = ({ name, discountedPrice, price, discount, bannerPortrait }: ITrendingCardProps) => {
+const TrendingCard = ({ id, name, discountedPrice, price, discount, bannerPortrait }: ITrendingCardProps) => {
+  const path = usePathname();
   return (
-    <button className="relative select-none">
+    <Link className="relative select-none" href={`${path}/game/${id}`}>
       {discount!==0 && (
         <p className="discount absolute top-1 right-1 bg-accent2 text-light1 rounded-full text-xs px-2 py-1">-{discount}%</p>
       )}
@@ -32,7 +36,7 @@ const TrendingCard = ({ name, discountedPrice, price, discount, bannerPortrait }
           <p className="discounted-price text-left text-sm opacity-50 font-medium line-through">${discountedPrice}</p>
         )}
       </div>
-    </button>
+    </Link>
   );
 };
 

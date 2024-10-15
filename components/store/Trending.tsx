@@ -51,10 +51,10 @@ const Trending = () => {
         </div>
         <CarouselContentCustom>
           {
-            games?.map((game)=>(
+            games?.map((game: Game, index: number)=>(
               game.isTrending && (
-                <CarouselItemCustom key={game.id} className='basis-1/5'>
-                  <TrendingCard name={game.name} price={game.price} discount={game.discount} discountedPrice={game.discountedPrice} bannerPortrait={game.images.bannerPortrait}/>
+                <CarouselItemCustom key={index} className='basis-1/5'>
+                  <TrendingCard id={game.id} name={game.name} price={game.price} discount={game.discount} discountedPrice={game.discountedPrice} bannerPortrait={game.images.bannerPortrait}/>
                 </CarouselItemCustom>
               )
             ))

@@ -1,16 +1,20 @@
 import Image from 'next/image';
 import React from 'react';
 import FallBackImage from './FallBackImage';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface IHighestRatedItemProps {
+  id: string
   bannerSquare: string | undefined
   name: string
   price: number | undefined
 }
 
-const HighestRatedItem = ({ bannerSquare, name, price }: IHighestRatedItemProps) => {
+const HighestRatedItem = ({ id, bannerSquare, name, price }: IHighestRatedItemProps) => {
+  const path = usePathname();
   return (
-    <button className="relative aspect-square select-none">
+    <Link className="relative aspect-square select-none" href={`${path}/game/${id}`}>
       {bannerSquare?(
         <Image className='w-full h-full aspect-square object-cover rounded-lg' src={bannerSquare} alt="" width={500} height={500}></Image>
       ):(
@@ -27,7 +31,7 @@ const HighestRatedItem = ({ bannerSquare, name, price }: IHighestRatedItemProps)
           )}
         </div>
       </div>
-    </button>
+    </Link>
   );
 };
 

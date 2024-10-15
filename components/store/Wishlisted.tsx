@@ -33,6 +33,7 @@ const Wishlisted = () => {
           .map((game) => (
             <SaleWishlistedRecentCard
               key={game.id}
+              id={game.id}
               bannerPortrait={game.images.bannerPortrait}
               name={game.name}
               discount={game.discount}

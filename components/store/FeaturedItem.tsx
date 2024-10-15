@@ -2,14 +2,18 @@ import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import React from 'react';
 import FallBackImage from './FallBackImage';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface IFeaturedItemProps {
+  id: string
   isWishlisted: boolean | undefined
   logo: string | undefined
   bannerLandscape: string | undefined
 }
 
-const FeaturedItem = ({ isWishlisted, logo, bannerLandscape }: IFeaturedItemProps) => {
+const FeaturedItem = ({ id, isWishlisted, logo, bannerLandscape }: IFeaturedItemProps) => {
+  const path = usePathname();
   return (
     <div className='w-full h-full'>
       {bannerLandscape?(
@@ -36,7 +40,7 @@ const FeaturedItem = ({ isWishlisted, logo, bannerLandscape }: IFeaturedItemProp
               <Icon className='text-xl' icon="iconoir:plus-circle" />
             </div>
           )}
-          <button className='bg-light1 px-5 py-3 rounded-lg'>Buy Now</button>
+          <Link className='bg-light1 px-5 py-3 rounded-lg' href={`${path}/game/${id}`}>Buy Now</Link>
         </div>
       </div>
     </div>
