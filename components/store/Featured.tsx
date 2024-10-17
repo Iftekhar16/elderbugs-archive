@@ -33,14 +33,14 @@ const Featured = () => {
   }
 
   return (
-    <div className='mt-10 mb-20 select-none'>
+    <div className='mt-5 xl:mt-10 mb-20 select-none'>
       <Carousel
         plugins={[
           Autoplay({
             delay: 3000,
           })
         ]}
-        className='max-w-[70rem] h-[80svh] mx-auto rounded-lg overflow-hidden'
+        className='max-w-[70rem] h-[80svh] mx-auto px-3 xl:px-0 rounded-lg overflow-hidden'
       >
         <CarouselContent className=''>
           {

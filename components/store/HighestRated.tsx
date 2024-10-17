@@ -33,7 +33,7 @@ const HighestRated = () => {
   }
 
   return (
-    <div className='max-w-[70rem] mx-auto mb-20'>
+    <div className='max-w-[70rem] mx-auto px-3 xl:px-0 mb-20'>
       <CarouselCustom
         plugins={[
           Autoplay({
@@ -53,7 +53,7 @@ const HighestRated = () => {
           {games?.sort((a,b) => (b.rating??0) - (a.rating??0))
             .slice(0,6)
             .map((game) => (
-              <CarouselItemCustom key={game.id} className='basis-1/3'>
+              <CarouselItemCustom key={game.id} className='basis-4/5 md:basis-1/2 xl:basis-1/3'>
                 <HighestRatedItem id={game.id} bannerSquare={game.images.bannerSquare} name={game.name} price={game.price}/>
               </CarouselItemCustom>
           ))}

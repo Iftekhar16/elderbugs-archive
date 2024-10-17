@@ -33,7 +33,7 @@ const Trending = () => {
   }
 
   return (
-    <div className='max-w-[70rem] mx-auto mb-20'>
+    <div className='max-w-[70rem] mx-auto px-3 xl:px-0 mb-20'>
       <CarouselCustom
         plugins={[
           Autoplay({
@@ -53,7 +53,7 @@ const Trending = () => {
           {
             games?.map((game: Game, index: number)=>(
               game.isTrending && (
-                <CarouselItemCustom key={index} className='basis-1/5'>
+                <CarouselItemCustom key={index} className='basis-4/5 sm:basis-1/3 xl:basis-1/5'>
                   <TrendingCard id={game.id} name={game.name} price={game.price} discount={game.discount} discountedPrice={game.discountedPrice} bannerPortrait={game.images.bannerPortrait}/>
                 </CarouselItemCustom>
               )

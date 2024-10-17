@@ -8,13 +8,9 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from 'embla-carousel-autoplay';
 import ReviewItem from './ReviewItem';
-import { Game, review } from '@/types/games';
+import { review } from '@/types/games';
 
-interface ReviewsProps {
-  game: Game;
-}
-
-const Reviews: React.FC<ReviewsProps> = ({ game }) => {
+const Reviews = ({ reviews }: {reviews: review[]}) => {
   return (
     <Carousel
       plugins={[
@@ -26,8 +22,8 @@ const Reviews: React.FC<ReviewsProps> = ({ game }) => {
     > 
     <div className="text-xl font-semibold mb-1">Reviews</div>
       <CarouselContent className=''>
-        {game.reviews.map((item: review, index: number)=>(
-          <CarouselItem key={index} className='basis-1/3 relative'>
+        {reviews?.map((item: review, index: number)=>(
+          <CarouselItem key={index} className='basis-5/6 xl:basis-1/3 relative'>
             <ReviewItem name={item.reviewerName??""} description={item.reviewDescription??""} rating={parseFloat(item.reviewRating??'0')}/>
           </CarouselItem>
         ))}

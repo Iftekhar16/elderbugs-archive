@@ -3,7 +3,8 @@ import Image from 'next/image';
 import React from 'react';
 import CarouselGame from './CarouselGame';
 import Reviews from './Reviews';
-import { description, Game } from '@/types/games';
+import { Game } from '@/types/games';
+import DescriptionGame from './DescriptionGame';
 
 interface GameDetailsProps {
   game: Game
@@ -14,51 +15,43 @@ const GameDetails: React.FC<GameDetailsProps> = ({ game }) => {
   console.log(game);
   console.log(game.platform.includes("Windows"))
   return (
-    <div className='hero mt-7'>
-      <div className="wrapper max-w-[70rem] mx-auto">
+    <div className='hero mt-3 xl:mt-7'>
+      <div className="wrapper max-w-[70rem] mx-auto px-3 xl:px-0">
         <div className="">
-          <div className="title text-5xl font-bold mb-3">{game.name}</div>
+          <div className="title text-xl md:text-5xl font-bold mb-1 xl:mb-3">{game.name}</div>
           <div className="flex items-center gap-1 mb-3">
             <div className="flex items-center">
               {[...Array(5)].map((_, index) => (
-                <div key={index} className="relative w-6 h-6">
-                  <Icon icon="solar:star-line-duotone" className="absolute text-2xl text-accent1" />
+                <div key={index} className="relative size-3 md:size-6">
+                  <Icon icon="solar:star-line-duotone" className="absolute text-xs md:text-2xl text-accent1" />
                   {index < Math.floor(rating) && (
-                    <Icon icon="solar:star-bold" className="absolute text-2xl text-accent1" />
+                    <Icon icon="solar:star-bold" className="absolute text-xs md:text-2xl text-accent1" />
                   )}
                   {index === Math.floor(rating) && rating % 1 !== 0 && (
                     <div className="absolute overflow-hidden" style={{ width: `${(rating % 1) * 100}%` }}>
-                      <Icon icon="solar:star-bold" className="text-2xl text-accent1" />
+                      <Icon icon="solar:star-bold" className="text-xs md:text-2xl text-accent1" />
                     </div>
                   )}
                 </div>
               ))}
             </div>
-            <div className="relative top-[2px]">{rating}</div>
+            <div className="text-xs md:relative md:top-[2px]">{rating}</div>
           </div>
         </div>
-        <div className="relative flex gap-7 mb-7">
-          <div className="left w-8/12">
+        <div className="relative flex flex-col md:flex-row gap-3 xl:gap-7 mb-7">
+          <div className="left md:w-8/12">
             <CarouselGame game={game}/>
-            <div className="description mb-3">
-              {game.descriptions?.map((item: description, index: number) => (
-                <div className="" key={index}>
-                  <div className="mb-1 font-semibold">{item.title}</div>
-                  <div className="mb-3">{item.content}</div>
-                </div>
-              ))}
+            <div className="hidden md:block">
+              {game.descriptions && (
+                <DescriptionGame descriptions={game?.descriptions}/>
+              )}
             </div>
           </div>
-          <div className="right w-4/12 sticky top-20 h-fit">
-            <div className="w-full h-52 flex justify-center items-center">
+          <div className="right md:w-4/12 md:sticky md:top-20 h-fit">
+            <div className="w-full h-52 hidden md:flex justify-center items-center">
               <Image className='max-w-full w-fit max-h-52 h-fit object-cover' src={game.images.logo??""} alt="" width={300} height={300}/>
             </div>
             <div className="text-xs">base game</div>
-            {/* {game.price===0?(
-              <div className="price text-xl font-semibold mb-3">Free to Play</div>
-            ):(
-              <div className="price text-xl font-semibold mb-3">${game.price}</div>
-            )} */}
             <div className="flex items-center gap-2 mb-3">
               {game.price === 0? (
                 <p className="price text-left text-xl font-semibold">Free to play</p>
@@ -117,9 +110,16 @@ const GameDetails: React.FC<GameDetailsProps> = ({ game }) => {
                 ))}
               </div>
             </div>
+            <div className="block md:hidden">
+              {game.descriptions && (
+                <DescriptionGame descriptions={game?.descriptions}/>
+              )}
+            </div>
           </div>
         </div>
-        <Reviews game={game}/>
+        {game.reviews && (
+          <Reviews reviews={game.reviews}/>
+        )}
       </div>
     </div>
   );
