@@ -10,7 +10,6 @@ export default function Home() {
         <div className="size-14 rounded-lg bg-light2"></div>
         <div className="size-14 rounded-lg bg-light3"></div>
         <div className="size-14 rounded-lg bg-accent1"></div>
-        <div className="size-14 rounded-lg bg-accent2"></div>
       </div>
     </div>
   );

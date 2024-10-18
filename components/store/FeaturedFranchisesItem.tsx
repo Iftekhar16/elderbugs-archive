@@ -22,7 +22,7 @@ const FeaturedFranchisesItem = ({ bannerPortrait, logo, name, descriptions }: IF
       )}
       <div className="gradient absolute bottom-0 left-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-dark3/70 to-transparent w-full h-3/4 transition"></div>
       {logo?(
-        <Image className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[10rem] xl:w-full max-h-[15rem] xl:max-h-[30rem] h-fit object-cover opacity-100 group-hover:opacity-0 transition" src={logo} alt='' width={1000} height={1000}/>
+        <Image className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[10rem] xl:max-w-[15rem] xl:w-full max-h-[15rem] xl:max-h-[30rem] h-fit object-cover opacity-100 group-hover:opacity-0 transition" src={logo} alt='' width={1000} height={1000}/>
       ):(
         <FallBackImage classes='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[10rem] xl:w-full max-h-[15rem] xl:max-h-[30rem] h-fit object-cover opacity-100 group-hover:opacity-0 transition' width={1000} height={1000} text="Featured+Franchise+Logo"/>
       )}

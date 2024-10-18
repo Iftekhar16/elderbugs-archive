@@ -53,7 +53,7 @@ const GameDetails: React.FC<GameDetailsProps> = ({ game }) => {
           </div>
           <div className="right md:w-4/12 md:sticky md:top-20 h-fit">
             <div className="w-full h-52 hidden md:flex justify-center items-center">
-              <Image className='max-w-full w-fit max-h-52 h-fit object-cover shadow-blur' src={game.images.logo??""} alt="" width={300} height={300}/>
+              <Image className='max-w-full w-fit max-h-52 h-fit object-cover shadow-blur p-3' src={game.images.logo??""} alt="" width={300} height={300}/>
             </div>
             <div className="text-xs">base game</div>
             <div className="flex items-center gap-2 mb-3">
@@ -68,11 +68,11 @@ const GameDetails: React.FC<GameDetailsProps> = ({ game }) => {
                 <p className="discounted-price text-left text-sm text-light3 font-medium line-through">${game.discountedPrice}</p>
               ):<></>}
               {game.discount !== 0 && game.discount!==null? (
-                <p className="discount bg-accent2 text-light1 rounded-full text-xs px-2 py-1">-{game.discount}%</p>
+                <p className="discount bg-accent1 text-light1 rounded-full text-xs px-2 py-1">-{game.discount}%</p>
               ):<></>}
             </div>
             <div className="flex flex-col gap-1 mb-3">
-              <button className="buy bg-accent2 text-light1 px-3 py-3 rounded-lg w-full">Buy Now</button>
+              <button className="buy bg-accent1 text-light1 px-3 py-3 rounded-lg w-full">Buy Now</button>
               <button className="cart bg-dark3 text-light1 px-3 py-3 rounded-lg w-full">Add To Cart</button>
               {game.isWishlisted?(
                 <div className="wishlist bg-dark3/80 text-light1 px-3 py-3 rounded-lg w-full text-center">Wishlisted</div>

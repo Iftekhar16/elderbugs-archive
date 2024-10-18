@@ -26,7 +26,7 @@ const Nav = () => {
     <div>
       <Menu isMenuOpen={isMenuOpen} handleMenu={handleMenu}/>
       <div className="spacer w-full h-12"></div>
-      <div className="w-full bg-accent2 text-light1 fixed top-0 left-0 z-[400]">
+      <div className="w-full bg-accent1 text-light1 fixed top-0 left-0 z-[400]">
         <div className="wrapper max-w-[70rem] mx-auto py-3 px-3 lg:px-0 flex justify-between md:justify-normal items-center gap-3">
           <div className="left md:w-full">
             <Link className="md:text-xl font-semibold" href="/store">Elderbug&apos;s Archive</Link>

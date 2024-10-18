@@ -18,7 +18,7 @@ const TrendingCard = ({ id, name, discountedPrice, price, discount, bannerPortra
   return (
     <Link className="relative select-none" href={`${path}/game/${id}`}>
       {discount!==0 && (
-        <p className="discount absolute top-1 right-1 bg-accent2 text-light1 rounded-full text-xs px-2 py-1">-{discount}%</p>
+        <p className="discount absolute top-1 right-1 bg-accent1 text-light1 rounded-full text-xs px-2 py-1">-{discount}%</p>
       )}
       {bannerPortrait? (
         <Image className='aspect-[3/4] object-cover mb-2 rounded-lg' src={bannerPortrait} alt="" width={500} height={500}></Image>

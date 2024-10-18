@@ -22,8 +22,7 @@ const config: Config = {
   			light1: '#FFFFFF',
   			light2: '#F1F1F1',
   			light3: '#7d7d7d',
-  			accent1: '#C80424',
-  			accent2: '#C9102E',
+  			accent1: '#C9102E',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
