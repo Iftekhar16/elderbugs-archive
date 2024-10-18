@@ -71,8 +71,8 @@ const Menu = ({ isMenuOpen, handleMenu }: {isMenuOpen: boolean, handleMenu: ()=>
                 <Link className='text-center' href="/store/game/1">Frostpunk</Link>
               </div>
               <div className="flex flex-col gap-3 pb-5">
-                <Link className='bg-light1 text-dark1 text-center px-3 py-1 rounded-lg' href="#">Sign up</Link>
-                <Link className='bg-accent1 text-light2 text-center font-medium px-3 py-1 rounded-lg transition' href="#">Log in</Link>
+                <Link className='bg-light1 text-dark1 text-center px-3 py-2 rounded-lg' href="#">Sign up</Link>
+                <Link className='bg-accent1 text-light2 text-center font-medium px-3 py-2 rounded-lg transition' href="#">Log in</Link>
               </div>
             </div>
           </div>
