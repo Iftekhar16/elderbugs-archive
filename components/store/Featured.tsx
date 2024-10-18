@@ -40,13 +40,13 @@ const Featured = () => {
             delay: 3000,
           })
         ]}
-        className='max-w-[70rem] h-[80svh] mx-auto px-3 xl:px-0 rounded-lg overflow-hidden'
+        className='max-w-[70rem] h-[70svh] md:h-[80svh] mx-auto px-3 xl:px-0 rounded-lg overflow-hidden'
       >
         <CarouselContent className=''>
           {
             games?.map((game: Game, index: number)=>(
               game.isFeatured && (
-                <CarouselItem key={index} className='relative h-[80svh]'>
+                <CarouselItem key={index} className='relative h-[70svh] md:h-[80svh]'>
                   <FeaturedItem
                     id={game.id}
                     isWishlisted={game.isWishlisted}

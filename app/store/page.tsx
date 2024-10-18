@@ -12,7 +12,7 @@ const Page = () => {
     <div className='flex flex-col justify-between min-h-screen'>
       {/* https://avatar.iran.liara.run/public */}
       <Nav/>
-      <div className="">
+      <div className="-z-10">
         <Featured/>
         <Trending/>
         <FeaturedFranchises/>
