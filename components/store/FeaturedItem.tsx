@@ -15,7 +15,7 @@ interface IFeaturedItemProps {
 const FeaturedItem = ({ id, isWishlisted, logo, bannerLandscape }: IFeaturedItemProps) => {
   const path = usePathname();
   return (
-    <div className='w-full h-full'>
+    <div className='w-full h-full relative'>
       {bannerLandscape?(
         <Image className='w-full h-full object-cover select-none aspect-square md:aspect-auto rounded-lg' src={bannerLandscape} alt="" width={2000} height={2000}/>
       ):(
