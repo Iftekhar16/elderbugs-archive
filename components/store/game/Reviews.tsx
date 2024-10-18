@@ -24,7 +24,7 @@ const Reviews = ({ reviews }: {reviews: review[]}) => {
       <CarouselContent className=''>
         {reviews?.map((item: review, index: number)=>(
           <CarouselItem key={index} className='basis-5/6 xl:basis-1/3 relative'>
-            <ReviewItem name={item.reviewerName??""} description={item.reviewDescription??""} rating={parseFloat(item.reviewRating??'0')}/>
+            <ReviewItem name={item.reviewerName} description={item.reviewDescription} rating={item.reviewRating}/>
           </CarouselItem>
         ))}
       </CarouselContent>

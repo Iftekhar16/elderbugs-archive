@@ -27,9 +27,9 @@ export interface description {
 }
 
 export interface review {
-  reviewerName? : string
-  reviewDescription? : string
-  reviewRating? : string
+  reviewerName : string
+  reviewDescription : string
+  reviewRating : number | null
 }
 
 export interface images {

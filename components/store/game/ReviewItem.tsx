@@ -4,10 +4,11 @@ import React from 'react';
 interface ReviewItemProps{
   name: string,
   description: string,
-  rating: number
+  rating: number | null
 }
 
 const ReviewItem = ({ name, description, rating }:ReviewItemProps) => {
+  console.log("rating:", rating);
   return (
     <div className="review h-full bg-dark3 text-light1 px-7 py-5 rounded-lg select-none flex flex-col justify-between">
       <div className="description">{description}</div>
