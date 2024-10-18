@@ -92,7 +92,11 @@ const GameDetails: React.FC<GameDetailsProps> = ({ game }) => {
             )}
             <div className="py-2 border-dark3/50 border-b-[1px] flex justify-between items-center gap-1">
               <div className="text-sm font-medium">Release Date</div>
-              <div className="text-sm text-right">{game.releaseDate}</div>
+              {game.releaseDate!==null? (
+                <div className="text-sm text-right">{game.releaseDate}</div>
+              ):(
+                <div className="text-sm text-right">TBA</div>
+              )}
             </div>
             <div className="py-2 flex justify-between items-center gap-1 mb-3">
               <div className="text-sm font-medium">Platforms</div>

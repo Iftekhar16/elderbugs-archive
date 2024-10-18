@@ -14,7 +14,7 @@ export interface Game {
   isFeaturedFranchise?: boolean
   developer: string
   publisher?: string
-  releaseDate?: string
+  releaseDate: string | null
   rating?: number | null
   platform: string[]
   reviews: review[]
