@@ -16,7 +16,7 @@ const FeaturedFranchisesItem = ({ bannerPortrait, logo, name, descriptions }: IF
   return (
     <div className="item relative group">
       {bannerPortrait?(
-        <Image className="h-[16rem] md:h-[20rem] xl:h-[30rem] object-cover brightness-75 group-hover:brightness-100 transition" src={bannerPortrait} alt='' width={1000} height={1000}/>
+        <Image className="h-[16rem] md:h-[20rem] xl:h-[30rem] object-cover brightness-50 group-hover:brightness-100 transition" src={bannerPortrait} alt='' width={1000} height={1000}/>
       ):(
         <FallBackImage classes='h-[16rem] md:h-[20rem] xl:h-[30rem] object-cover brightness-75 group-hover:brightness-100 transition' width={1000} height={1000} text="Featured+Franchise"/>
       )}
