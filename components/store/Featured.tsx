@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react'
 import {
   Carousel,
@@ -12,7 +12,6 @@ import FeaturedItem from './FeaturedItem';
 import { useQuery } from '@tanstack/react-query';
 import fetchFeaturedGames from '@/utils/providers/games/fetchFeaturedGames';
 import { Game } from '@/types/games';
-
 
 const Featured = () => {
 
@@ -33,20 +32,20 @@ const Featured = () => {
   }
 
   return (
-    <div className='mt-5 xl:mt-10 mb-20 select-none'>
+    <div className='mt-5 xl:mt-10 mb-10 md:mb-20 select-none'>
       <Carousel
         plugins={[
           Autoplay({
             delay: 3000,
           })
         ]}
-        className='max-w-[70rem] h-[70svh] md:h-[80svh] mx-auto px-3 xl:px-0 rounded-lg overflow-hidden'
+        className='max-w-[70rem] md:aspect-auto h-fit md:h-[80svh] mx-auto px-3 xl:px-0 rounded-lg overflow-hidden'
       >
         <CarouselContent className=''>
           {
             games?.map((game: Game, index: number)=>(
               game.isFeatured && (
-                <CarouselItem key={index} className='relative h-[70svh] md:h-[80svh]'>
+                <CarouselItem key={index} className='relative aspect-square md:aspect-auto h-fit md:h-[80svh]'>
                   <FeaturedItem
                     id={game.id}
                     isWishlisted={game.isWishlisted}

@@ -25,7 +25,7 @@ const FeaturedFranchises = () => {
   }
 
   return (
-    <div className='max-w-[70rem] mx-auto px-3 xl:px-0 mb-20'>
+    <div className='max-w-[70rem] mx-auto px-3 xl:px-0 mb-10 md:mb-20'>
       <TitleLink title="Featured Franchises" link="#" icon="hugeicons:arrow-right-01"/>
       <div className="featured-franchises-container grid grid-cols-1 md:grid-cols-3 rounded-lg overflow-hidden">
         {

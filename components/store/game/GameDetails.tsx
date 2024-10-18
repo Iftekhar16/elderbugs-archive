@@ -19,24 +19,28 @@ const GameDetails: React.FC<GameDetailsProps> = ({ game }) => {
       <div className="wrapper max-w-[70rem] mx-auto px-3 xl:px-0">
         <div className="">
           <div className="title text-xl md:text-5xl font-bold mb-1 xl:mb-3">{game.name}</div>
-          <div className="flex items-center gap-1 mb-3">
-            <div className="flex items-center">
-              {[...Array(5)].map((_, index) => (
-                <div key={index} className="relative size-3 md:size-6">
-                  <Icon icon="solar:star-line-duotone" className="absolute text-xs md:text-2xl text-accent1" />
-                  {index < Math.floor(rating) && (
-                    <Icon icon="solar:star-bold" className="absolute text-xs md:text-2xl text-accent1" />
-                  )}
-                  {index === Math.floor(rating) && rating % 1 !== 0 && (
-                    <div className="absolute overflow-hidden" style={{ width: `${(rating % 1) * 100}%` }}>
-                      <Icon icon="solar:star-bold" className="text-xs md:text-2xl text-accent1" />
-                    </div>
-                  )}
-                </div>
-              ))}
+          {rating===0?(
+            <div className="mb-5"></div>
+          ):(
+            <div className="flex items-center gap-1 mb-3">
+              <div className="flex items-center">
+                {[...Array(5)].map((_, index) => (
+                  <div key={index} className="relative size-3 md:size-6">
+                    <Icon icon="solar:star-line-duotone" className="absolute text-xs md:text-2xl text-accent1" />
+                    {index < Math.floor(rating) && (
+                      <Icon icon="solar:star-bold" className="absolute text-xs md:text-2xl text-accent1" />
+                    )}
+                    {index === Math.floor(rating) && rating % 1 !== 0 && (
+                      <div className="absolute overflow-hidden" style={{ width: `${(rating % 1) * 100}%` }}>
+                        <Icon icon="solar:star-bold" className="text-xs md:text-2xl text-accent1" />
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="text-xs md:relative md:top-[2px]">{rating}</div>
             </div>
-            <div className="text-xs md:relative md:top-[2px]">{rating}</div>
-          </div>
+          )}
         </div>
         <div className="relative flex flex-col md:flex-row gap-3 xl:gap-7 mb-7">
           <div className="left md:w-8/12">
@@ -49,21 +53,23 @@ const GameDetails: React.FC<GameDetailsProps> = ({ game }) => {
           </div>
           <div className="right md:w-4/12 md:sticky md:top-20 h-fit">
             <div className="w-full h-52 hidden md:flex justify-center items-center">
-              <Image className='max-w-full w-fit max-h-52 h-fit object-cover' src={game.images.logo??""} alt="" width={300} height={300}/>
+              <Image className='max-w-full w-fit max-h-52 h-fit object-cover shadow-blur' src={game.images.logo??""} alt="" width={300} height={300}/>
             </div>
             <div className="text-xs">base game</div>
             <div className="flex items-center gap-2 mb-3">
               {game.price === 0? (
                 <p className="price text-left text-xl font-semibold">Free to play</p>
+              ) : game.price === null? (
+                <p className="price text-left text-xl font-semibold">Coming Soon!</p>
               ) : (
                 <p className="price text-left text-xl font-semibold">${game.price}</p>
               )}
-              {game.discount!==0 && (
-                <p className="discounted-price text-left text-sm opacity-50 font-medium line-through">${game.discountedPrice}</p>
-              )}
-              {game.discount !== 0 && (
+              {game.discount!==0 && game.discount!==null? (
+                <p className="discounted-price text-left text-sm text-light3 font-medium line-through">${game.discountedPrice}</p>
+              ):<></>}
+              {game.discount !== 0 && game.discount!==null? (
                 <p className="discount bg-accent2 text-light1 rounded-full text-xs px-2 py-1">-{game.discount}%</p>
-              )}
+              ):<></>}
             </div>
             <div className="flex flex-col gap-1 mb-3">
               <button className="buy bg-accent2 text-light1 px-3 py-3 rounded-lg w-full">Buy Now</button>
@@ -75,21 +81,21 @@ const GameDetails: React.FC<GameDetailsProps> = ({ game }) => {
               )}
             </div>
             <div className="py-2 border-dark3/50 border-b-[1px] flex justify-between items-center gap-1">
-              <div className="font-medium">Developer</div>
-              <div className="">{game.developer}</div>
+              <div className="text-sm font-medium">Developer</div>
+              <div className="text-sm text-right">{game.developer}</div>
             </div>
             {game.publisher && (
               <div className="py-2 border-dark3/50 border-b-[1px] flex justify-between items-center gap-1">
-                <div className="font-medium">Publisher</div>
-                <div className="">{game.publisher}</div>
+                <div className="text-sm font-medium">Publisher</div>
+                <div className="text-sm text-right">{game.publisher}</div>
               </div>
             )}
             <div className="py-2 border-dark3/50 border-b-[1px] flex justify-between items-center gap-1">
-              <div className="font-medium">Release Date</div>
-              <div className="">{game.releaseDate}</div>
+              <div className="text-sm font-medium">Release Date</div>
+              <div className="text-sm text-right">{game.releaseDate}</div>
             </div>
             <div className="py-2 flex justify-between items-center gap-1 mb-3">
-              <div className="font-medium">Platforms</div>
+              <div className="text-sm font-medium">Platforms</div>
               <div className="flex items-center gap-1">
                 {game.platform.includes("Windows") && (
                   <Icon className='text-xl' icon="mingcute:windows-fill" />

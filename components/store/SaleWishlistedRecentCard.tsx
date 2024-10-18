@@ -31,7 +31,7 @@ const SaleWishlistedRecentCard = ({ id, bannerPortrait, name, discount, price, d
             <p className="base-price text-left font-medium">${price}</p>
           )}
           {discount!==0 && (
-            <p className="discounted-price text-left text-sm opacity-50 font-medium line-through">${discountedPrice}</p>
+            <p className="discounted-price text-left text-sm text-light3 font-medium line-through">${discountedPrice}</p>
           )}
           {discount !== 0 && (
             <p className="discount bg-accent2 text-light1 rounded-full text-xs px-2 py-1">-{discount}%</p>

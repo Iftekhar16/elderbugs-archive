@@ -26,6 +26,9 @@ const CarouselGame: React.FC<CarouselGameProps>= ({ game }) => {
     >
       <CarouselContent className=''>
         <CarouselItem className='relative'>
+          <Image className='w-full aspect-video rounded-lg object-cover' src={game.images.bannerLandscape??""} alt="" width={1920} height={1080}/>
+        </CarouselItem>
+        <CarouselItem className='relative'>
           <Image className='w-full aspect-video rounded-lg object-cover' src={game.images.screenshots?.screenshot1??""} alt="" width={1920} height={1080}/>
         </CarouselItem>
         <CarouselItem className='relative'>

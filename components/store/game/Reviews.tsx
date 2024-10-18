@@ -18,9 +18,9 @@ const Reviews = ({ reviews }: {reviews: review[]}) => {
           delay: 3000,
         })
       ]}
-      className='rounded-lg overflow-hidden mb-20'
+      className='rounded-lg overflow-hidden mb-10 md:mb-20'
     > 
-    <div className="text-xl font-semibold mb-1">Reviews</div>
+    <div className="text-xl font-semibold mb-2">Reviews</div>
       <CarouselContent className=''>
         {reviews?.map((item: review, index: number)=>(
           <CarouselItem key={index} className='basis-5/6 xl:basis-1/3 relative'>

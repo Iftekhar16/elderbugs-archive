@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 
 const config: Config = {
     darkMode: ["class"],
@@ -20,7 +21,7 @@ const config: Config = {
   			dark3: '#1C1C1C',
   			light1: '#FFFFFF',
   			light2: '#F1F1F1',
-  			light3: '#76757A',
+  			light3: '#7d7d7d',
   			accent1: '#C80424',
   			accent2: '#C9102E',
   			card: {
@@ -69,6 +70,6 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate],
 };
 export default config;

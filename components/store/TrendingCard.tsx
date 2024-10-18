@@ -33,7 +33,7 @@ const TrendingCard = ({ id, name, discountedPrice, price, discount, bannerPortra
           <p className="base-price text-left font-medium">${price}</p>
         )}
         {discount!==0 && (
-          <p className="discounted-price text-left text-sm opacity-50 font-medium line-through">${discountedPrice}</p>
+          <p className="discounted-price text-left text-sm text-light3 font-medium line-through">${discountedPrice}</p>
         )}
       </div>
     </Link>

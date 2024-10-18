@@ -33,7 +33,7 @@ const Trending = () => {
   }
 
   return (
-    <div className='max-w-[70rem] mx-auto px-3 xl:px-0 mb-20'>
+    <div className='max-w-[70rem] mx-auto px-3 xl:px-0 mb-10 md:mb-20'>
       <CarouselCustom
         plugins={[
           Autoplay({
