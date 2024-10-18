@@ -64,7 +64,7 @@ const Menu = ({ isMenuOpen, handleMenu }: {isMenuOpen: boolean, handleMenu: ()=>
             <Icon className='text-xl' icon="iconamoon:close-thin" />
           </button>
           <Link className="text-xl text-accent1 font-semibold absolute top-3 left-3" href="/store">Elderbug&apos;s Archive</Link>
-          <div className="menu-main h-screen text-dark1 px-5 pt-14">
+          <div className="menu-main h-[97svh] text-dark1 px-5 pt-14">
             <div className="h-full flex flex-col justify-between">
               <div className="links flex flex-grow flex-col justify-center gap-3 mb-3">
                 <Link className='text-center' href="/store">Store</Link>
